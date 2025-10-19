@@ -22,25 +22,86 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 # Hard skills
 
-## Samples
+## Real life examples
 
-You can see samples in the different repositories that comes in this organization:
+### Idea
 
-> The list of repositories are fully GitOps managed and deployed from [TODO](#)'s actions.
+In order to develop a meaningful application that would cover most of the tech I want to showcase in this organization, I need a real life scenario project (_to have real features implemented instead of Hello Worlds_). 
 
-- TODO: give a desc
-- TODO: give a desc
-- TODO: give a desc
-- TODO: give a desc
-- TODO: give a desc
+> In this scope, I decided to develop and deploy a Single Player Tarkov cooperative dashboard for me and my friends for our milsim sessions on Discord. You will not hear about it in the following of this portfolio (other than code itself) because:
+> 1. You don't care about SPT, and won't use such product.
+> 2. You are here for getting an overview of my hard skills, not for (head, eyes) gameplay.
+
+### Repository
+
+You can see working examples in the different repositories that comes in this organization:
+
+- [**coming soon**] [TerraformIaC](https://github.com/VictorMalodPortfolio/TerraformIaC): Terraform modules and configs for provisioning infrastructure
+- [**coming soon**] [K8sManifests](https://github.com/VictorMalodPortfolio/K8sManifests): Helm charts, Kubernetes manifests, CRDs
+- [**coming soon**] [GitOpsConfig](https://github.com/VictorMalodPortfolio/GitOpsConfig): Argo CD apps, environment overlays, Helm values, sealed secrets
+- [**coming soon**] [DotNetFrontEnd](https://github.com/VictorMalodPortfolio/DotNetFrontEnd): A .NET10 Blazor Server Frontend
+- [**coming soon**] [DotNetBackEnd](https://github.com/VictorMalodPortfolio/DotNetBackEnd): An ASP.NET10 Backend API
+- [**coming soon**] [DotNetOrchestrator](https://github.com/VictorMalodPortfolio/DotNetOrchestrator): A .NET10 Application orchestrating business logic
+- [**coming soon**] [RustDiscordBot](https://github.com/VictorMalodPortfolio/RustDiscordBot): A discord bot coded in Rust
+- [**coming soon**] [GoK8sOperator](https://github.com/VictorMalodPortfolio/GoK8sOperator): A K8s operator coded in Golang
+- [**coming soon**] [PythonMcpServer](https://github.com/VictorMalodPortfolio/PythonMcpServer): A MCP server coded in Python
+
+```mermaid
+graph TD
+  subgraph Infrastructure
+    TerraformIaC[TerraformIaC]
+  end
+
+  subgraph Kubernetes
+    K8sManifests[K8sManifests]
+    GitOpsConfig[GitOpsConfig]
+    GoK8sOperator[GoK8sOperator]
+  end
+
+  subgraph Application
+    DotNetFrontEnd[DotNetFrontEnd]
+    DotNetBackEnd[DotNetBackEnd]
+    DotNetOrchestrator[DotNetOrchestrator]
+  end
+
+  subgraph External
+    RustDiscordBot[RustDiscordBot]
+  end
+
+  style FutureEnhancements stroke-dasharray: 5 5
+  style An_LLM_Command_Router stroke-dasharray: 5 5
+
+  subgraph FutureEnhancements
+    PythonMcpServer[PythonMcpServer]
+    An_LLM_Command_Router[An_LLM_Command_Router]
+  end
+
+  K8sManifests -.->|Deploying| Application
+  K8sManifests -.->|Deploying| External
+
+  TerraformIaC -->|Provisioning infrastructure and k8s cluster| K8sManifests
+  GitOpsConfig -->|Syncing manifests via Argo CD| K8sManifests
+  GitOpsConfig -->|Deploying operator via GitOps| GoK8sOperator
+
+  DotNetFrontEnd --->|Calling backend APIs| DotNetBackEnd
+  GoK8sOperator -->|Sending cluster events or CRD updates| DotNetOrchestrator
+
+  RustDiscordBot -->|Calling backend APIs| DotNetBackEnd
+
+  %% Future enhancements
+  RustDiscordBot -.->|Sending commands| An_LLM_Command_Router
+  An_LLM_Command_Router -.->|Routing parsed intent| PythonMcpServer
+  PythonMcpServer -.->|Querying backend APIs| DotNetBackEnd
+  DotNetOrchestrator -.->|Sending events| RustDiscordBot
+```
 
 ## Tools
 
 ### The programing languages that I've liked using
 
 - C# 
-- Java
 - Go 
+- Java
 - Python
 - C
 - GSC
