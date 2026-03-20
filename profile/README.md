@@ -26,73 +26,35 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 ### Idea
 
-In order to develop a meaningful application that would cover most of the tech I want to showcase in this organization, I need a real life scenario project (_to have real features implemented instead of Hello Worlds_). 
+To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
-> In this scope, I decided to develop and deploy a Single Player Tarkov cooperative dashboard for me and my friends for our milsim sessions on Discord. You will not hear about it in the following of this portfolio (other than code itself) because:
-> 1. You don't care about SPT, and won't use such product.
-> 2. You are here for getting an overview of my hard skills, not for (head, eyes) gameplay.
+The goal: a self-hosted, always-on platform where I can deploy, test, and iterate on anything — provisioned with Terraform, managed with GitOps.
 
-### Repository
+### Repositories
 
-You can see working examples in the different repositories that comes in this organization:
-
-- [**coming soon**] [TerraformIaC](https://github.com/VictorMalodPortfolio/TerraformIaC): Terraform modules and configs for provisioning infrastructure
-- [**coming soon**] [K8sManifests](https://github.com/VictorMalodPortfolio/K8sManifests): Helm charts, Kubernetes manifests, CRDs
-- [**coming soon**] [GitOpsConfig](https://github.com/VictorMalodPortfolio/GitOpsConfig): Argo CD apps, environment overlays, Helm values, sealed secrets
-- [**coming soon**] [DotNetFrontEnd](https://github.com/VictorMalodPortfolio/DotNetFrontEnd): A .NET10 Blazor Server Frontend
-- [**coming soon**] [DotNetBackEnd](https://github.com/VictorMalodPortfolio/DotNetBackEnd): An ASP.NET10 Backend API
-- [**coming soon**] [DotNetOrchestrator](https://github.com/VictorMalodPortfolio/DotNetOrchestrator): A .NET10 Application orchestrating business logic
-- [**coming soon**] [RustDiscordBot](https://github.com/VictorMalodPortfolio/RustDiscordBot): A discord bot coded in Rust
-- [**coming soon**] [GoK8sOperator](https://github.com/VictorMalodPortfolio/GoK8sOperator): A K8s operator coded in Golang
-- [**coming soon**] [PythonMcpServer](https://github.com/VictorMalodPortfolio/PythonMcpServer): A MCP server coded in Python
+- [Homelab](https://github.com/VictorMalodPortfolio/Homelab): OVH VPS provisioning, k3s cluster, Helm charts, Kubernetes manifests, and ArgoCD GitOps configuration — the full platform, end to end
+- [DockerTooling](https://github.com/VictorMalodPortfolio/DockerTooling): Dockerfile for an isolated, reproducible development environment with all necessary tooling pre-installed
 
 ```mermaid
 graph TD
-  subgraph Infrastructure
-    TerraformIaC[TerraformIaC]
+  subgraph Homelab["Homelab repo"]
+    Terraform["terraform/"]
+    Manifests["k8s/"]
+    GitOps["gitops/"]
   end
 
-  subgraph Kubernetes
-    K8sManifests[K8sManifests]
-    GitOpsConfig[GitOpsConfig]
-    GoK8sOperator[GoK8sOperator]
+  subgraph OVH["OVH VPS"]
+    k3s["k3s"]
+    ArgoCD["ArgoCD"]
+    Traefik["Traefik"]
+    Services["Services"]
   end
 
-  subgraph Application
-    DotNetFrontEnd[DotNetFrontEnd]
-    DotNetBackEnd[DotNetBackEnd]
-    DotNetOrchestrator[DotNetOrchestrator]
-  end
-
-  subgraph External
-    RustDiscordBot[RustDiscordBot]
-  end
-
-  style FutureEnhancements stroke-dasharray: 5 5
-  style An_LLM_Command_Router stroke-dasharray: 5 5
-
-  subgraph FutureEnhancements
-    PythonMcpServer[PythonMcpServer]
-    An_LLM_Command_Router[An_LLM_Command_Router]
-  end
-
-  K8sManifests -.->|Deploying| Application
-  K8sManifests -.->|Deploying| External
-
-  TerraformIaC -->|Provisioning infrastructure and k8s cluster| K8sManifests
-  GitOpsConfig -->|Syncing manifests via Argo CD| K8sManifests
-  GitOpsConfig -->|Deploying operator via GitOps| GoK8sOperator
-
-  DotNetFrontEnd --->|Calling backend APIs| DotNetBackEnd
-  GoK8sOperator -->|Sending cluster events or CRD updates| DotNetOrchestrator
-
-  RustDiscordBot -->|Calling backend APIs| DotNetBackEnd
-
-  %% Future enhancements
-  RustDiscordBot -.->|Sending commands| An_LLM_Command_Router
-  An_LLM_Command_Router -.->|Routing parsed intent| PythonMcpServer
-  PythonMcpServer -.->|Querying backend APIs| DotNetBackEnd
-  DotNetOrchestrator -.->|Sending events| RustDiscordBot
+  Terraform -->|Provisions| OVH
+  GitOps -->|Syncs via ArgoCD| ArgoCD
+  ArgoCD -->|Deploys| Manifests
+  Manifests -->|Defines| Services
+  Traefik -->|Exposes| Services
 ```
 
 ## Tools
