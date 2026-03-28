@@ -119,8 +119,9 @@ graph TD
 ### Monitoring & Observability
 
 - OpenTelemetry (in .NET Aspire & Azure AppInsights)
+- Grafana 
+- Grafana OTel Stack (Tempo / Loki / Prometheus)
 - Dynatrace
-- Prometheus
 - Jaeger
 - Log4Net
 - Azure AppInsights's .NET TelemetryClient
