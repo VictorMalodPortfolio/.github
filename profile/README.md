@@ -28,33 +28,65 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
-The goal: a self-hosted, always-on platform where I can deploy, test, and iterate on anything — provisioned with Terraform, managed with GitOps.
+The goal: a self-hosted, always-on platform where I can deploy, test, and iterate on anything — provisioned with OpenTofu, managed with GitOps.
 
 ### Repositories
 
-- [Homelab](https://github.com/VictorMalodPortfolio/Homelab): OVH VPS provisioning, k3s cluster, Helm charts, Kubernetes manifests, and ArgoCD GitOps configuration — the full platform, end to end
+- [Homelab](https://github.com/VictorMalodPortfolio/Homelab): OVH VPS provisioning, k3s cluster, Helm charts, and ArgoCD GitOps configuration — the full platform, end to end
 - [DockerTooling](https://github.com/VictorMalodPortfolio/DockerTooling): Dockerfile for an isolated, reproducible development environment with all necessary tooling pre-installed
 
 ```mermaid
 graph TD
-  subgraph Homelab["Homelab repo"]
-    Terraform["terraform/"]
-    Manifests["k8s/"]
-    GitOps["gitops/"]
-  end
+    dev["💻 Developer"]
 
-  subgraph OVH["OVH VPS"]
-    k3s["k3s"]
-    ArgoCD["ArgoCD"]
-    Traefik["Traefik"]
-    Services["Services"]
-  end
+    subgraph local["Local Machine"]
+        tooling["DockerTooling container\nkubectl · helm · tofu · sops"]
+        age["age key"]
+        kubeconfig["kubeconfig"]
+    end
 
-  Terraform -->|Provisions| OVH
-  GitOps -->|Syncs via ArgoCD| ArgoCD
-  ArgoCD -->|Deploys| Manifests
-  Manifests -->|Defines| Services
-  Traefik -->|Exposes| Services
+    subgraph github["GitHub"]
+        homelab_repo["Homelab repo"]
+        docker_repo["DockerTooling repo"]
+        ghcr["GHCR image"]
+    end
+
+    subgraph ovh["OVH"]
+        dns["DNS\nvictor-malod.ovh"]
+        s3["Object Storage\nTofu state"]
+
+        subgraph vps["VPS · Ubuntu 24.04 · k3s"]
+            argocd["ArgoCD\nApp of Apps"]
+            cert_manager["cert-manager"]
+            webhook["OVH webhook"]
+            traefik["Traefik\ningress"]
+            ovh_secret["Secret: ovh-credentials"]
+            tls_secret["Secret: wildcard TLS"]
+        end
+    end
+
+    subgraph le["Let's Encrypt"]
+        acme["ACME v2"]
+    end
+
+    dev -->|push| homelab_repo
+    dev -->|push| docker_repo
+    docker_repo -->|CI builds| ghcr
+    homelab_repo -->|GitOps sync| argocd
+    argocd -->|deploys| cert_manager
+    argocd -->|deploys| webhook
+    argocd -->|deploys| traefik
+    tooling -->|tofu apply| vps
+    tooling -->|tofu apply| dns
+    tooling -->|state| s3
+    age -->|decrypt secrets| tooling
+    kubeconfig -->|cluster access| tooling
+    webhook -->|reads| ovh_secret
+    webhook -->|creates TXT record| dns
+    acme -->|verifies TXT| dns
+    acme -->|issues cert| cert_manager
+    cert_manager -->|stores| tls_secret
+    traefik -->|serves TLS| tls_secret
 ```
 
 ## Tools
@@ -89,17 +121,17 @@ graph TD
 
 ### IaC tools I've used
 
-- Terraform
+- OpenTofu / Terraform
+- Helm
 - ARM Template
-<!-- helm chart -->
 <!-- ansible -->
 <!-- Bicep -->
 
 ### Containerization & Registries
 
-<!-- kubernetes -->
-<!-- podman -->
+- Kubernetes (k3s)
 - Docker
+- GitHub Container Registry (GHCR)
 - Azure Container Apps
 - Azure Container Instance (yikes)
 - Azure Container Registries
