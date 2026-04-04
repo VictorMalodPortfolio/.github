@@ -10,6 +10,8 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 # Soft skills
 
+Who are you dealing with ?
+
 <details>
     <summary>Expand me</summary>
     
@@ -18,12 +20,12 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 - I am a proactive engineer, I will raise concerns, share ideas, and will assume any responsability you want me to take. I've led teams accross the world (mostly Ukraine, Portugal, India and some from the United-States), and we always managed to deliver applications that built trust and credibility :fire:.
 - I'm **not** an **over**-engineer. I know time is a **very valuable** resource, and I will always evaluate the tradeoffs and think before building or validating any part of a software. I am never going to spend multiple days on insignificant task, just for the fun of it. I am not a cat chasing butterflies.
 - I pay attention to detail. You'll probably wonder how I spotted something in your PR that you missed.
-- I love input from others, I dislike building something alone: I know I could be missing something obvious to someone else. (Now we have AI, sure, but AI is so bad when it doesn't have the whole context of a project :rage4:)
-- I love solving problems. That's what engineering is about. Repetitive tasks with no creativity aren't my thing. I naturally lean toward the hardest problems first.
+- I love input from others, I dislike building something alone: I know I could be missing something obvious to someone else. (Now we have AI, and itr surely helped me to give me an oversight during the building iterations of this portfolio)
+- I love solving problems. That's what engineering is about. Repetitive tasks with no reasoning aren't my thing. I naturally lean toward the hardest problems first.
 > :arrow_right_hook: In some scenarios where priority is onto the most boring task, I've been told that it can be considered as a weakness. And I agree, that's why I am still doing these boring tasks when needed.
-- Do you want to onboard me on a tech I don't know yet ? No problem. Give me _`<timescale according to complexity of the subject goes here>`_ of experiment and I will have strong basics. I've done this many times before.
+- Do you want to onboard me on a tech I don't know yet ? No problem. Give me _`<timescale according to complexity of the subject goes here>`_ of experiment and I will have strong basics. I've done this many times before, even in here with my Homelab (check hard skills section).
 - My main goal will always be client satification :100:
-- There is a high chance that I send GIF memes to my coworkers :trollface:
+- There is a high chance that I send GIF memes to my coworkers, I find this very effective to communicate emotions :trollface:.
 
 </details>
 
@@ -31,12 +33,12 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 ## Idea
 
-<details>
-    <summary>Expand me</summary>
-
 To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
 The goal: a self-hosted, always-on platform where I can deploy, test, and iterate on anything — provisioned with OpenTofu, managed with GitOps.
+
+<details>
+    <summary>Expand me</summary>
 
 ### Repositories
 
@@ -100,6 +102,8 @@ graph TD
 </details>
 
 ## Tools
+
+In order to keep track of the stuff I've played around with, I've built this list of programming languages, frameworks, IaC, monitoring, security and quality tools. That I've liked to use during my DevSecOps iterations.  
 
 <details>
     <summary>Exapnd me</summary>
