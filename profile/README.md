@@ -10,6 +10,9 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 # Soft skills
 
+<details>
+    <summary>Expand me</summary>
+    
 - I'm a **very** collaborative teammate, I work with people every day with passion and smile on my face, _especially when we are firefighting in production_. I'm highly communicative (verbally and in writing), if there is a tension, I'm going to talk to you about it, even if you would rather avoid it :feelsgood:.
 - Working with other people is **essential** for me. Sitting alone in a corner would slowly kill me. Developping software alone is **slow**, **lacks** of knowledge **sharing**, **not challenging**, and frankly... **sad**.
 - I am a proactive engineer, I will raise concerns, share ideas, and will assume any responsability you want me to take. I've led teams accross the world (mostly Ukraine, Portugal, India and some from the United-States), and we always managed to deliver applications that built trust and credibility :fire:.
@@ -22,11 +25,14 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 - My main goal will always be client satification :100:
 - There is a high chance that I send GIF memes to my coworkers :trollface:
 
+</details>
+
 # Hard skills
 
-## Real life examples
+## Idea
 
-### Idea
+<details>
+    <summary>Expand me</summary>
 
 To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
@@ -91,7 +97,12 @@ graph TD
     traefik -->|serves TLS| tls_secret
 ```
 
+</details>
+
 ## Tools
+
+<details>
+    <summary>Exapnd me</summary>
 
 ### The programing languages that I've liked using
 
@@ -159,4 +170,6 @@ graph TD
 - Jaeger
 - Log4Net
 - Azure AppInsights's .NET TelemetryClient
+
+</details>
 
