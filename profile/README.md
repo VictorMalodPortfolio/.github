@@ -1,6 +1,6 @@
 <img src="https://komarev.com/ghpvc/?username=VictorMalodPortfolio&label=Profile%20views&color=03d4ff&style=flat" alt="VictorMalodPortfolio" />
 
-# Welcome
+### Welcome
 
 :suspect: My name is Victor, and this is my professional portfolio that contains different repositories to showcase my skills to the interested.
 
@@ -8,7 +8,7 @@ In the following of this README, you will find my [soft](#soft-skills) & [hard](
 
 > French school taugh me to avoid being wrong at all cost. My professional experience with Ukrainians teammates told me otherwise. Now I like being wrong and to own it, it motivates me learning and improve.
 
-# Soft skills
+### :handshake: Soft skills
 
 Who are you dealing with ?
 
@@ -29,9 +29,9 @@ Who are you dealing with ?
 
 </details>
 
-# Hard skills
+### :computer: Hard skills
 
-## Idea
+#### :bulb: Idea
 
 To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
@@ -40,7 +40,7 @@ The goal: a self-hosted, always-on platform where I can deploy, test, and iterat
 <details>
     <summary>Expand me</summary>
 
-### Repositories
+##### :package: Repositories
 
 - [Homelab](https://github.com/VictorMalodPortfolio/Homelab): OVH VPS provisioning, k3s cluster, Helm charts, and ArgoCD GitOps configuration — the full platform, end to end
 - [DockerTooling](https://github.com/VictorMalodPortfolio/DockerTooling): Dockerfile for an isolated, reproducible development environment with all necessary tooling pre-installed
@@ -101,14 +101,14 @@ graph TD
 
 </details>
 
-## Tools
+#### :toolbox: Tools
 
 In order to keep track of the stuff I've played around with, I've built this list of programming languages, frameworks, IaC, monitoring, security and quality tools. That I've liked to use during my DevSecOps iterations.  
 
 <details>
-    <summary>Exapnd me</summary>
+    <summary>Expand me</summary>
 
-### The programing languages that I've liked using
+##### :scroll: The programing languages that I've liked using
 
 - C# 
 - Go 
@@ -117,7 +117,7 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - C
 - GSC
 
-### The frameworks I have worked with
+##### :classical_building: The frameworks I have worked with
 
 - .NET (including Framework & Core): 
   - Aspire 
@@ -136,7 +136,7 @@ In order to keep track of the stuff I've played around with, I've built this lis
 <!-- AWS: -->
 <!-- OVH: -->
 
-### IaC tools I've used
+##### :building_construction: IaC tools I've used
 
 - OpenTofu / Terraform
 - Helm
@@ -144,7 +144,7 @@ In order to keep track of the stuff I've played around with, I've built this lis
 <!-- ansible -->
 <!-- Bicep -->
 
-### Containerization & Registries
+##### :whale: Containerization & Registries
 
 - Kubernetes (k3s)
 - Docker
@@ -154,18 +154,19 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - Azure Container Registries
 - JFrog Artifactory
 
-### CI/CD
+##### :arrows_counterclockwise: CI/CD
 
 - Azure DevOps pipelines (& release)
 - GitHub actions
 
-### Quality & Security
+##### :closed_lock_with_key: Quality & Security
 
 - SonarQube
 - Trivy
 - BlackDuck
+- Sops
 
-### Monitoring & Observability
+##### :bar_chart: Monitoring & Observability
 
 - OpenTelemetry (in .NET Aspire & Azure AppInsights)
 - Grafana 
