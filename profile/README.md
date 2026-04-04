@@ -4,16 +4,14 @@
 
 :suspect: My name is Victor, and this is my professional portfolio that contains different repositories to showcase my skills to the interested.
 
-In the following of this README, you will find my [soft](#soft-skills) & [hard](#hard-skills) skills that will give you an oversight of what I am capable of when working in a professional environment.
+In the following of this README, you will find my soft & hard skills that will give you an oversight of what I am capable of when working in a professional environment.
 
 > French school taugh me to avoid being wrong at all cost. My professional experience with Ukrainians teammates told me otherwise. Now I like being wrong and to own it, it motivates me learning and improve.
 
 ### :handshake: Soft skills
 
-Who are you dealing with ?
-
 <details>
-    <summary>Expand me</summary>
+    <summary>Who are you dealing with ?</summary>
     
 - I'm a **very** collaborative teammate, I work with people every day with passion and smile on my face, _especially when we are firefighting in production_. I'm highly communicative (verbally and in writing), if there is a tension, I'm going to talk to you about it, even if you would rather avoid it :feelsgood:.
 - Working with other people is **essential** for me. Sitting alone in a corner would slowly kill me. Developping software alone is **slow**, **lacks** of knowledge **sharing**, **not challenging**, and frankly... **sad**.
@@ -36,9 +34,6 @@ Who are you dealing with ?
 To showcase infrastructure and platform engineering skills with real, working examples rather than hello worlds, I built a personal Kubernetes homelab deployed on a VPS.
 
 The goal: a self-hosted, always-on platform where I can deploy, test, and iterate on anything — provisioned with OpenTofu, managed with GitOps.
-
-<details>
-    <summary>Expand me</summary>
 
 ##### :package: Repositories
 
@@ -99,16 +94,12 @@ graph TD
     traefik -->|serves TLS| tls_secret
 ```
 
-</details>
-
 #### :toolbox: Tools
 
 In order to keep track of the stuff I've played around with, I've built this list of programming languages, frameworks, IaC, monitoring, security and quality tools. That I've liked to use during my DevSecOps iterations.  
 
 <details>
-    <summary>Expand me</summary>
-
-##### :scroll: The programing languages that I've liked using
+    <summary>:scroll: The programing languages that I've liked using</summary>
 
 - C# 
 - Go 
@@ -117,7 +108,10 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - C
 - GSC
 
-##### :classical_building: The frameworks I have worked with
+</details>
+
+<details>
+    <summary>:classical_building: The frameworks I have worked with</summary>
 
 - .NET (including Framework & Core): 
   - Aspire 
@@ -136,7 +130,10 @@ In order to keep track of the stuff I've played around with, I've built this lis
 <!-- AWS: -->
 <!-- OVH: -->
 
-##### :building_construction: IaC tools I've used
+</details>
+
+<details>
+    <summary>:building_construction: IaC tools I've used</summary>
 
 - OpenTofu / Terraform
 - Helm
@@ -144,7 +141,10 @@ In order to keep track of the stuff I've played around with, I've built this lis
 <!-- ansible -->
 <!-- Bicep -->
 
-##### :whale: Containerization & Registries
+</details>
+
+<details>
+    <summary>:whale: Containerization & Registries</summary>
 
 - Kubernetes (k3s)
 - Docker
@@ -154,19 +154,28 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - Azure Container Registries
 - JFrog Artifactory
 
-##### :arrows_counterclockwise: CI/CD
+</details>
+
+<details>
+    <summary>:arrows_counterclockwise: CI/CD</summary>
 
 - Azure DevOps pipelines (& release)
 - GitHub actions
 
-##### :closed_lock_with_key: Quality & Security
+</details>
+
+<details>
+    <summary>:closed_lock_with_key: Quality & Security</summary>
 
 - SonarQube
 - Trivy
 - BlackDuck
 - Sops
 
-##### :bar_chart: Monitoring & Observability
+</details>
+
+<details>
+    <summary>:bar_chart: Monitoring & Observability</summary>
 
 - OpenTelemetry (in .NET Aspire & Azure AppInsights)
 - Grafana 
@@ -177,4 +186,5 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - Azure AppInsights's .NET TelemetryClient
 
 </details>
+
 
