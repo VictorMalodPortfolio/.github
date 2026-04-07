@@ -125,7 +125,9 @@ In order to keep track of the stuff I've played around with, I've built this lis
   - Functions (previously WebJobs)
   - LogicApps
 - Open Telemetry
-- Go Testify
+- Go:
+  - Testify
+  - Benthos (now Redpanda-Connect)
 - Black Ops 3 Mod Tools
 <!-- AWS: -->
 <!-- OVH: -->
