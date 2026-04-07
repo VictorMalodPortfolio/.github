@@ -1,5 +1,3 @@
-<img src="https://komarev.com/ghpvc/?username=VictorMalodPortfolio&label=Profile%20views&color=03d4ff&style=flat" alt="VictorMalodPortfolio" />
-
 ### Welcome
 
 :suspect: My name is Victor, and this is my professional portfolio that contains different repositories to showcase my skills to the interested.
@@ -189,4 +187,5 @@ In order to keep track of the stuff I've played around with, I've built this lis
 
 </details>
 
+<img src="https://komarev.com/ghpvc/?username=VictorMalodPortfolio&label=Profile%20views&color=03d4ff&style=flat" alt="VictorMalodPortfolio" />
 
