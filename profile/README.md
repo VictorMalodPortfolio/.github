@@ -51,7 +51,8 @@ graph TD
     subgraph github["GitHub"]
         homelab_repo["Homelab repo"]
         docker_repo["DockerTooling repo"]
-        ghcr["GHCR image"]
+        ghcr_tooling["GHCR\nk8s-tooling"]
+        ghcr_reposerver["GHCR\nargocd-repo-server"]
     end
 
     subgraph ovh["OVH"]
@@ -60,6 +61,7 @@ graph TD
 
         subgraph vps["VPS · Ubuntu 24.04 · k3s"]
             argocd["ArgoCD\nApp of Apps"]
+            helm_secrets["helm-secrets\n+ SOPS + age"]
             cert_manager["cert-manager"]
             webhook["OVH webhook"]
             traefik["Traefik\ningress"]
@@ -74,11 +76,14 @@ graph TD
 
     dev -->|push| homelab_repo
     dev -->|push| docker_repo
-    docker_repo -->|CI builds| ghcr
+    docker_repo -->|CI builds| ghcr_tooling
+    homelab_repo -->|CI builds| ghcr_reposerver
     homelab_repo -->|GitOps sync| argocd
+    argocd -->|decrypts secrets| helm_secrets
     argocd -->|deploys| cert_manager
     argocd -->|deploys| webhook
     argocd -->|deploys| traefik
+    argocd -->|deploys| ovh_secret
     tooling -->|tofu apply| vps
     tooling -->|tofu apply| dns
     tooling -->|state| s3
