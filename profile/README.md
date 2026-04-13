@@ -65,6 +65,7 @@ graph TD
             cert_manager["cert-manager"]
             webhook["OVH webhook"]
             traefik["Traefik\ningress"]
+            authelia["Authelia\nOIDC + ForwardAuth"]
             ovh_secret["Secret: ovh-credentials"]
             tls_secret["Secret: wildcard TLS"]
         end
@@ -83,6 +84,7 @@ graph TD
     argocd -->|deploys| cert_manager
     argocd -->|deploys| webhook
     argocd -->|deploys| traefik
+    argocd -->|deploys| authelia
     argocd -->|deploys| ovh_secret
     tooling -->|tofu apply| vps
     tooling -->|tofu apply| dns
@@ -95,6 +97,8 @@ graph TD
     acme -->|issues cert| cert_manager
     cert_manager -->|stores| tls_secret
     traefik -->|serves TLS| tls_secret
+    authelia -->|OIDC SSO| argocd
+    traefik -->|ForwardAuth| authelia
 ```
 
 #### :toolbox: Tools
