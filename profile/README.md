@@ -124,11 +124,13 @@ In order to keep track of the stuff I've played around with, I've built this lis
   - Aspire 
   - ASP.NET
   - Entity Framework
-  - xUnit 
+  - xUnit / bUnit
   - Blazor
+  - Playwright
 - Azure: 
   - .NET SDK (including emulators)
   - App Service
+  - Container App
   - Functions (previously WebJobs)
   - LogicApps
 - Open Telemetry
