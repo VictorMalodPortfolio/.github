@@ -182,6 +182,7 @@ In order to keep track of the stuff I've played around with, I've built this lis
 - Trivy
 - BlackDuck
 - Sops
+- Renovate
 
 </details>
 
